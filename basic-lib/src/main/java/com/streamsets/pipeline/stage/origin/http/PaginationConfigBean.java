@@ -49,7 +49,6 @@ public class PaginationConfigBean {
       triggeredByValue = "LINK_FIELD",
       displayPosition = 30
   )
-  //@FieldSelectorModel(singleValued = true)
   public String nextPageURLPrefix;
   
   @ConfigDef(
