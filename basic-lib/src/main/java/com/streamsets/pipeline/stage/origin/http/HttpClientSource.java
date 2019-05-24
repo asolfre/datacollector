@@ -625,9 +625,9 @@ public class HttpClientSource extends BaseSource {
           RecordEL.setRecordInContext(stopVars, record);
           haveMorePages = !stopEval.eval(stopVars, conf.pagination.stopCondition, Boolean.class);
           if (haveMorePages) {
-        	final String nextPageURLPrefix = StringUtils.isNotBlank(conf.pagination.nextPageURLPrefix) ? conf.pagination.nextPageURLPrefix : "";
-        	final String nextPageFieldValue = record.get(conf.pagination.nextPageFieldPath).getValueAsString();	
-        	final String nextPageURL = nextPageFieldValue.startsWith(nextPageURLPrefix) ? nextPageFieldValue : nextPageURLPrefix.concat(nextPageFieldValue);
+            final String nextPageURLPrefix = StringUtils.isNotBlank(conf.pagination.nextPageURLPrefix) ? conf.pagination.nextPageURLPrefix : "";
+            final String nextPageFieldValue = record.get(conf.pagination.nextPageFieldPath).getValueAsString();
+            final String nextPageURL = nextPageFieldValue.startsWith(nextPageURLPrefix) ? nextPageFieldValue : nextPageURLPrefix.concat(nextPageFieldValue);
             next = Link.fromUri(nextPageURL).build();
           } else {
             next = null;
